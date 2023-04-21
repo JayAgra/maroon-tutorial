@@ -89,7 +89,7 @@ function runQuiz(id, button) {
           button.innerHTML = "correct on first try";
           button.style.color = "#0f0";
         } else if (button.getAttribute("data-attempts") === "4") {
-          button.innerHTML = "failed. L YOU SUCK. alex will use copilot to kill you. Why did you even join programming in the first place you absolute failure to society. :D";
+          button.innerHTML = "failed";
           button.style.color = "#f00";
         } else {
           button.innerHTML = "correct in " + button.getAttribute("data-attempts") + " tries";
