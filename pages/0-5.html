@@ -1,0 +1,35 @@
+<div>
+    <h2>0.5 - Robot Programming Concepts</h2>
+    <div style="text-align: left; line-height: 1.5;">
+        <p>This section is a high-level overview of how we structure a robot’s code. Some parts of this may make more sense once you get into the coding project and start to see how they are applied, so feel free to just skim this section if this is your first time trying out robot programming.</p>
+        <p>When we start programming a robot, we don’t start from scratch each time. We start off with a collection of code that the team has developed over the years that makes it easier to get the robots to do the things we commonly want them to do. This is the “Maroon Framework” referred to in the title of this document.</p>
+        <h4 style="text-decoration: underline;">Motors and Sensors</h4>
+        <ul style="list-style: none;">
+        <li>The Maroon Framework has classes to represent the different kinds of motors and sensors that we might add to our robot. Motors are attached to motor controllers, which our code can use via the <span class="inlineCode">MotorController</span> class. We’ll cover the different sensor classes as we need them. If you’re curious, you can see the list of supported device types by looking at the code in <span class="inlineCode">src/main/java/com/team766/hal</span>.</li>
+        </ul>
+        <h4 style="text-decoration: underline;">Mechanisms</h4>
+        <ul style="list-style: none;">
+        <li>You should create a class to represent each mechanism on the robot, such as an arm, grabber, or shooter.</li><br>
+        <li>Mechanism classes should extend the <span class="inlineCode">Mechanism</span> base class. A mechanism class should contain all of the motors and sensors that are associated with that mechanism.</li>
+        </ul>
+        <h4 style="text-decoration: underline;">Procedures</h4>
+        <ul style="list-style: none;">
+        <li>A procedure class defines an operation or a sequence of operations that we want the robot to perform. This could be a simple operation like raising an arm mechanism to a given position, or it could be the complex sequence of operations needed to implement an autonomous routine like picking up a game piece, driving to a goal, and scoring.</li><br>
+        <li>It might be useful to think of mechanisms as “nouns” and procedures as “verbs”. Procedures are the actions that a robot does, and mechanisms are the things that do the actions.</li><br>
+        <li>Procedure classes should extend the <span class="inlineCode">Procedure</span> base class. The <span class="inlineCode">public void run(Context context)</span> method of a procedure defines what happens when the procedure is run.</li><br>
+        <li>It’s recommended to first implement procedures for simple operations, then create more complex procedures by using the simple procedures. For example, a hypothetical <span class="inlineCode">ScoreGamePiece</span> procedure might be implemented by running a <span class="inlineCode">RaiseArm</span> procedure followed by a <span class="inlineCode">ReleaseGrabber</span> procedure.</li>
+        </ul>
+        <h4 style="text-decoration: underline;">Contexts</h4>
+        <ul style="list-style: none;">
+        <li>The <span class="inlineCode">Context</span> passed to a procedure’s run method allows the procedure to control how it is executed, and how it interacts with other procedures.</li><br>
+        <li>One of the main purposes of the <span class="inlineCode">Context</span> is to allow your procedure to wait for something. For example, to have your procedure pause for a certain amount of time, call <span class="inlineCode">context.waitForSeconds</span>. Using <span class="inlineCode">Context</span>’s wait methods will allow other parts of the robot’s code to run while your procedure has nothing to do.</li><br>
+        <li>We may want to have multiple procedures running at the same time on a robot. For example, raising an arm mechanism while driving. If a procedure wants to have multiple other procedures run at the same time, it can call <span class="inlineCode">context.startAsync</span>; we’ll see more about this in the Combining Procedures [tofix] section.</li>
+        </ul>
+        <h4 style="text-decoration: underline;">Mechanism Ownership</h4>
+        <ul style="list-style: none;">
+        <li>Contexts also make sure that multiple procedures don’t try to use a mechanism at the same time. Your procedure should call <span class="inlineCode">context.takeOwnership(yourMechanism)</span> before using that mechanism to make sure that no other procedures are using it. If a procedure is already running that is using that mechanism, the previous procedure will be stopped immediately so that your new procedure can use it. To offer an example of where this is useful, suppose you have procedures to <span class="inlineCode">RaiseArm</span> and <span class="inlineCode">LowerArm</span>. The driver requests <span class="inlineCode">RaiseArm</span> and the arm starts raising, but then the driver changes their mind and requests <span class="inlineCode">LowerArm</span>. When the <span class="inlineCode">LowerArm</span> procedure starts running and takes ownership of the Arm mechanism, the <span class="inlineCode">RaiseArm</span> procedure will be automatically stopped.</li><br>
+        <li>When a procedure is done using a mechanism, it can call <span class="inlineCode">context.releaseOwnership(yourMechanism)</span>. This allows another procedure to take ownership of the mechanism without causing the first procedure to be stopped. Procedures will automatically release ownership of all mechanisms when they finish, so in most cases, it is not necessary to call <span class="inlineCode">releaseOwnership</span> yourself, but it’s good to keep this in mind.</li><br>
+        <li>We’ll see an example of this being used in the following tutorial.</li>
+        </ul>
+    </div>
+</div><br>

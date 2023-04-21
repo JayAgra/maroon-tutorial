@@ -1,0 +1,82 @@
+html,body {
+    background-color: #000;
+    font-family: "raleway-400", sans-serif;
+    overflow-x: none;
+}
+
+body, article {
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    line-height: 1.5;
+}
+
+a {
+    /*color: #ffd82c;*/
+    color: #2997ff;
+}
+
+code {
+    border-radius: 0.5vw;
+}
+
+.articleport {
+    align-items: stretch;
+}
+
+.highlightInline {
+    display: inline;
+}
+
+.inlineCode {
+    font-family: "JetBrainsMono-400", monospace;
+    color: #ccc;
+}
+
+.quizSect {
+    background-color: #011627;
+    border-radius: 0.5vw;
+    padding: 1vw;
+}
+
+.quizSect > button {
+    border: 0px solid #000;
+    border-radius: 0.5vw;
+    padding: 0.555vw;
+    background-color: #000;
+    color: #fff;
+}
+
+.qtitle {
+    background-color: #a70335;
+    border-radius: 0.5vw;
+    color: #fff;
+    padding: 0.25vw;
+}
+
+.mcqDiv {
+    line-height: 1.5 !important;
+}
+
+@font-face {
+    font-family: 'raleway-300';
+    src: url('fonts/Raleway-300.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'raleway-400';
+    src: url('fonts/Raleway-400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'raleway-700';
+    src: url('fonts/Raleway-700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrainsMono-400';
+    src: url('fonts/JetBrainsMono-400.ttf') format('truetype');
+}
