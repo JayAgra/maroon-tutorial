@@ -24,13 +24,26 @@ const pageList = [
  * @param {string} path path to load document from. example: "0-1.html"
  */
 
+function goToPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const pageName = urlParams.get("page");
+  if (pageName) {renderHTML(pageName);} else {renderHTML("toc");}
+}
+
 function renderHTML(path) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", `./pages/${path}`, true);
+    xhr.open("GET", `./pages/${path}.html`, true);
 
     xhr.onreadystatechange = async () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
-        console.log("got it")
+        console.log("got it");
+
+        let params = new URLSearchParams(window.location.search);
+        try {params.delete("page")} catch {}
+        params.set("page", path);
+
+        window.history.pushState("", "Maroon Framework Tutorial", window.location.protocol + "//" + window.location.host + window.location.pathname + "?" + params.toString());
+
         //set data-page to path for use with
         document.getElementById("article").setAttribute("data-page", path);
         document.getElementById("article").innerHTML = xhr.responseText;
@@ -100,23 +113,23 @@ function changePage(forward) {
   return;
 }
 
-//captures back keyboard shortcut and takes user to toc page. uses metaKey
-//to be universal, instead of checking OS and picking command/control
+//captures page forward and backward shortcuts
 document.addEventListener('keydown', function(event) {
   if (event.metaKey && event.key === "ArrowLeft") {
-    event.preventDefault();
-    renderHTML("toc.html")
+    history.back();
+  } else if (event.metaKey && event.key === "ArrowRight") {
+    history.forward();
   }
 });
 
 function disableHome() {
-  if (document.getElementById("article").getAttribute("data-page") === "toc.html") {
+  if (document.getElementById("article").getAttribute("data-page") === "toc") {
     document.getElementById("homeButton").disabled = "true";
     document.getElementById("homeButton").onclick = '';
     document.getElementById("homeButton").style.color = "gray";
   } else {
     document.getElementById("homeButton").removeAttribute("disabled")
-    document.getElementById("homeButton").onclick = function(){renderHTML("toc.html")};
+    document.getElementById("homeButton").onclick = function(){renderHTML("toc")};
     document.getElementById("homeButton").style.color = "#2997ff"; //ffd82c
   }
 }

@@ -60,6 +60,11 @@ code {
     line-height: 1.5 !important;
 }
 
+.divOneFveHt {
+    text-align: left;
+    line-height: 1.5;
+}
+
 @font-face {
     font-family: 'raleway-300';
     src: url('fonts/Raleway-300.ttf') format('truetype');
