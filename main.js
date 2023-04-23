@@ -35,36 +35,4 @@ function runQuiz(id, button) {
     }
 }
 
-//need to finish this function to allow page navigation with forward and back buttons
-/**
- *
- * @param {boolean} forward - should the page move forward? if false, page moves backward.
- * @returns nothing honestly
- */
-
-function changePage(forward) {
-  return;
-}
-
-//captures page forward and backward shortcuts
-document.addEventListener('keydown', function(event) {
-  if (event.metaKey && event.key === "ArrowLeft") {
-    history.back();
-  } else if (event.metaKey && event.key === "ArrowRight") {
-    history.forward();
-  }
-});
-
-function disableHome() {
-  if (document.getElementById("article").getAttribute("data-page") === "toc") {
-    document.getElementById("homeButton").disabled = "true";
-    document.getElementById("homeButton").onclick = '';
-    document.getElementById("homeButton").style.color = "gray";
-  } else {
-    document.getElementById("homeButton").removeAttribute("disabled")
-    document.getElementById("homeButton").onclick = function(){renderHTML("toc")};
-    document.getElementById("homeButton").style.color = "#2997ff"; //ffd82c
-  }
-}
-
 //to add: service worker for ability to access comepletely offline.
