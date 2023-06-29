@@ -1,16 +1,105 @@
-html,body {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    line-height: 1.5;
     background-color: #000;
     font-family: "raleway-400", sans-serif;
     overflow-x: none;
 }
 
-body, article {
+.title {
+    margin: 0;
+    width: 100vw;
+    text-align: center;
+    border-bottom: solid darkgray 0.05vh;
+    height: 5.5vh;
+}
+
+.title h2 {
+    margin: 0;
+    margin-bottom: 0.5vh;
+}
+
+.mainContent {
+    margin: 0;
+    width: 100vw;
+    height: 89vh;
     display: flex;
-    justify-content: top;
+    flex-direction: row;
+}
+
+.tableOfContents {
+    height: 89vh;
+    width: 20vw;
+    background-color: #2997ff;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    color: #fff;
-    line-height: 1.5;
+}
+
+.tocHeader {
+    width: 20vw;
+    height: 7vh;
+    background-color: #000;
+    border-bottom: solid darkgray 0.05vh;
+}
+
+.tocHeader p {
+    width: 20vw;
+    height: 7vh;
+    font-size: large;
+    text-align: center;
+}
+
+.tocContents {
+    width: 20vw;
+    height: 77vh;
+    background-color: #000;
+}
+
+.tocFooter {
+    width: 20vw;
+    height: 5vh;
+    background-color: #000;
+    border-top: solid darkgray 0.05vh;
+}
+
+.tocFooter p {
+    width: 20vw;
+    height: 5vh;
+    font-size: small;
+    text-align: center;
+}
+
+.articleContent {
+    height: 89vh;
+    width: 80vw;
+    background-color: #000;
+    border-left: solid darkgray 0.05vh;
+    overflow-y: auto;
+}
+
+article {
+    margin: 1vw;
+}
+
+article h1 {
+    text-align: center;
+}
+
+.footer {
+    margin: 0;
+    width: 100vw;
+    border-top: solid darkgray 0.05vh;
+    height: 1vh;
+}
+
+.footer p {
+    width: 100vw;
+    text-align: center;
+    font-size: small;
+    margin-top: 1vh;
 }
 
 a {
