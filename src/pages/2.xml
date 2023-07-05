@@ -1,0 +1,12 @@
+<h1>m****n f*******k</h1>
+<p>content</p>
+<div class="quizSect">
+    <span class="qtitle">quiz</span>&emsp;question?<br><br>
+    <div class="mcqDiv" id="f2cb0381b0a63fd4d0479e644aeb9f6f" data-answer="a">
+        <span>&emsp;<input type="radio" name="f2cb0381b0a63fd4d0479e644aeb9f6f-radio" value="a"> right</span><br>
+        <span>&emsp;<input type="radio" name="f2cb0381b0a63fd4d0479e644aeb9f6f-radio" value="b"> wrong</span><br>
+        <span>&emsp;<input type="radio" name="f2cb0381b0a63fd4d0479e644aeb9f6f-radio" value="c"> wrong</span><br>
+        <span>&emsp;<input type="radio" name="f2cb0381b0a63fd4d0479e644aeb9f6f-radio" value="d"> wrong</span>
+    </div>
+    <br><button onclick="runQuiz('f2cb0381b0a63fd4d0479e644aeb9f6f', this)" data-attempts="0">check</button>
+</div><br>
