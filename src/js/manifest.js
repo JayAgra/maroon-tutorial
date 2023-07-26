@@ -15,5 +15,5 @@ const pageManifest = [
     new Page("interesting document", "0.xml", 0),
     new Page("i like being unproductive", "1.xml", 1),
     new Page("aaaaaa", "2.xml", 2),
-    new Page("its murica day", "3.xml", 3),
+    new Page("content system test", "test.xml", 4),
 ];
