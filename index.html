@@ -14,29 +14,9 @@
                     <p>maroon</p>
                 </div>
                 <div class="tocContents">
-                    <div class="tocItem tocSelectedItem">
-                        <div class="tocItemHalign tocComplete">
-                            <span class="tocItemTitleHolder tocComplete">interesting document</span>
-                        </div>
-                    </div>
-                    <div class="tocItem">
-                        <div class="tocItemHalign tocIncomplete">
-                            <span class="tocItemTitleHolder">i like being unproductive</span>
-                        </div>
-                    </div>
-                    <div class="tocItem">
-                        <div class="tocItemHalign tocIncomplete">
-                            <span class="tocItemTitleHolder">aaaaaa</span>
-                        </div>
-                    </div>
-                    <div class="tocItem">
-                        <div class="tocItemHalign tocComplete">
-                            <span class="tocItemTitleHolder">its murica day</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="tocFooter">
-                    <p>i am 0% done with this</p>
+                    <p><span id="progressIndicator">0</span>% Complete</p>
                 </div>
             </div>
             <div class="articleContent">
@@ -45,12 +25,20 @@
             </div>
         </div>
         <div class="footer">
-            <p>please help i dont want to fix this pile of shit</p>
+            <div class="footerContainer">
+                <div class="settings">
+                    <img src="src/icons/settings.svg" class="settingsTrigger"><span class="settingsTrigger">&emsp;Settings</span>
+                </div>
+                <!--<div class="rightToolbar">
+                    <img src="src/icons/settings.svg"><span>&emsp;Settings</span>
+                </div>-->
+            </div>
         </div>
-        <script type="text/javascript" src="src/js/contentload.js"></script>
-        <script type="text/javascript" src="src/js/startapp.js"></script>
-        <script type="text/javascript" src="src/js/saveprogress.js"></script>
+        <script type="text/javascript" src="src/js/manifest.js"></script>
         <script type="text/javascript" src="src/js/quiz.js"></script>
+        <script type="text/javascript" src="src/js/saveprogress.js"></script>
+        <script type="text/javascript" src="src/js/startapp.js"></script>
+        <script type="text/javascript" src="src/js/contentload.js"></script>
         <script type="text/javascript" src="src/js/highlight.min.js"></script>
         <script type="text/javascript">hljs.highlightAll();loadPage(0);</script>
     </body>

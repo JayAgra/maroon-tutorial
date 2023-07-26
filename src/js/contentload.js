@@ -1,14 +1,14 @@
 function loadPage(pnum = 0) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", `src/pages/${pnum}.xml`, true);
+    xhr.open("GET", `src/pages/${pageManifest[pnum].src}`, true);
 
     xhr.onreadystatechange = async () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             console.log("200 ok");
-            console.log(xhr.responseText);
             document.getElementById("articleContentElement").innerHTML = xhr.responseText;
             hljs.highlightAll();
             window.currentPage = pnum;
+            setPageAsRead(pageManifest[pnum].id, pnum);
             return;
         } else if (xhr.status === 401) {
             console.log("401 failure");

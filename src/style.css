@@ -1,14 +1,25 @@
 :root {
     --sectionBorderColor: #444;
+    --textColor: #fff;
+    --backgroundColor: #000;
+}
+
+:root .jayagra {
+    --backgroundColor: #024;
+}
+
+:root .light {
+    --textColor: #000;
+    --backgroundColor: #fff;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: var(--textColor);
     line-height: 1.5;
-    background-color: #000;
+    background-color: var(--backgroundColor);
     font-family: "raleway-400", sans-serif;
     overflow-x: none;
 }
@@ -37,7 +48,7 @@ body {
 .tocHeader {
     width: 20vw;
     height: 7vh;
-    background-color: #000;
+    background-color: var(--backgroundColor);
     border-bottom: solid var(--sectionBorderColor) 0.05vh;
     display: flex;
     flex-direction: column;
@@ -53,7 +64,7 @@ body {
 .tocContents {
     width: 20vw;
     height: 82.5vh;
-    background-color: #000;
+    background-color: var(--backgroundColor);
     overflow-y: auto;
 }
 
@@ -122,7 +133,7 @@ body {
 .tocFooter {
     width: 20vw;
     height: 5vh;
-    background-color: #000;
+    background-color: var(--backgroundColor);
     border-top: solid var(--sectionBorderColor) 0.05vh;
     display: flex;
     flex-direction: column;
@@ -138,7 +149,7 @@ body {
 .articleContent {
     height: 94vh;
     width: 80vw;
-    background-color: #000;
+    background-color: var(--backgroundColor);
     border-left: solid var(--sectionBorderColor) 0.05vh;
     overflow-y: auto;
 }
@@ -161,11 +172,25 @@ article h1 {
     justify-content: center;
 }
 
-.footer p {
-    width: 100vw;
-    text-align: center;
-    font-size: small;
-    margin-top: 1vh;
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings {
+    margin-top: 1.75vh;
+    margin-left: 1.5vh;
+    width: 49vw;
+}
+
+.settings span, .rightToolbar span {
+    position: relative;
+    bottom: 0.5vh;
+}
+
+.rightToolbar {
+    margin-top: 1.75vh;
+    margin-left: 1.5vh;
 }
 
 a {
@@ -198,17 +223,17 @@ code {
 }
 
 .quizSect > button {
-    border: 0px solid #000;
+    border: 0px solid var(--backgroundColor);
     border-radius: 0.5vw;
     padding: 0.555vw;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
 }
 
 .qtitle {
     background-color: #a70335;
     border-radius: 0.5vw;
-    color: #fff;
+    color: var(--textColor);
     padding: 0.25vw;
 }
 
