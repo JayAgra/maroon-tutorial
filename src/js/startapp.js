@@ -32,12 +32,6 @@ tocItems.forEach((tocItem) => {
         : "tocItemHalign tocIncomplete";
 });
 
-Array.from(document.getElementsByClassName("settingsTrigger")).forEach((item) => {
-    item.onclick = () => {
-        alert("i didnt implement this yet :~)")
-    }
-})
-
 document.getElementById("progressIndicator").textContent = Math.round(
     (document.cookie.split("; ").find((row) => row.startsWith("735369a9857a9f670dea0="))?.split("=")[1].split(",").length / pageManifest.length) * 100
 );

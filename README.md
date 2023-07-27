@@ -13,7 +13,7 @@ ok its not really boilerplate but you must title pages
 ### Plaintext
 
 To insert plain text, use the following HTML tags
-`<p></p>`, `<h1></h1>`, `<h2></h2>`, `<h3></h3>`, `<h4></h4>`, `<h5></h5>`, `<h6></h6>`. The sizes of each are shown below. Note: the underline in h1 is created by markdown and will not be created by html renderers.
+`<p></p>`, `<h1></h1>`, `<h2></h2>`, `<h3></h3>`, `<h4></h4>`, `<h5></h5>`, `<h6></h6>`. The sizes of each are shown below. Note: the underline in h1 is created by markdown and will not be created by html renderers. To insert a line break, use `<br>` (depending on the situation, you may want two), no closing tag needed.
 
 <ul>
 <li><h1>h1</h1></li>
@@ -68,9 +68,18 @@ Where `&&`s are present, place the multiple choice options
 
 To embed remote content, use the HTML `iframe` element. Ex: `<iframe src="https://github.com/" width="100%"></iframe>`. Currently, there is no default styling for iframes.<br><hr>
 
+### Tooltips
+
+To add tooltips, simply add a `span` tag with the `data-tooltip` attribute set, within the current body of text. Specify the tooltip contents in the attribute.
+```html
+<p> I do not like conducting a proper <span data-tooltip="A procedure for critical evaluation; a means of determining the presence, quality, or truth of something; a trial.">test</span> before I push my code</p>
+```
+
+<br><hr>
+
 ### Registering created pages
 
-For pages to be displayed in the table of contents and to be integrated with the progress-saving mechanism, all created pages must be added to the `pageManifest` in `manifest.js`, the only JavaScript file that is not minified or packed. To register a page, add it in the appropriate order in the `pageManifest` array, using `Page`. 
+For pages to be displayed in the table of contents and to be integrated with the progress-saving mechanism, all created pages must be added to the `pageManifest` in `manifest.js`, the only JavaScript file that is not minified or packed. To register a page, add it in the appropriate order in the `pageManifest` array, using `Page`.
 
 <ul>
 <li>pageTitle (String) is the page title to be displayed in the table of contents. Keep this title succinct. Ex: Intro</li>

@@ -16,4 +16,5 @@ const pageManifest = [
     new Page("i like being unproductive", "1.xml", 1),
     new Page("aaaaaa", "2.xml", 2),
     new Page("content system test", "test.xml", 4),
+    new Page("lengthy title test because i need to see if lengthy titles lengthyyyyyy", "lengthy.xml", 5),
 ];
