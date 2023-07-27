@@ -18,12 +18,15 @@
     src: url('fonts/JetBrainsMono-400.ttf') format('truetype');
 }
 
+/* color themes */
+
 :root {
-    --sectionBorderColor: #444;
     --textColor: #fff;
     --backgroundColor: #000;
+    --sectionBorderColor: #444;
     --tocItem: rgba(255, 255, 255, 0.1);
     --tocItemSel: rgba(255, 255, 255, 0.2);
+    --codeBkg: #011627;
     --accent: #024;
     --accentText: #fff;
 }
@@ -31,9 +34,55 @@
 :root .light {
     --textColor: #000;
     --backgroundColor: #fff;
+    --sectionBorderColor: #444;
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 34, 68, 0.5);
+    --codeBkg: #011627;
+    --accent: #AED6FF;
+    --accentText: #024;
+}
+
+:root .jayagra {
+    --textColor: #fff;
+    --backgroundColor: #024;
+    --sectionBorderColor: #000;
+    --tocItem: rgba(0, 0, 0, 0.1);
+    --tocItemSel: rgba(0, 0, 0, 0.3);
+    --codeBkg: #000;
+    --accent: #21023b;
+    --accentText: #fff;
+}
+
+:root .night {
+    --textColor: #fff;
+    --backgroundColor: #21023b;
+    --sectionBorderColor: #000;
+    --tocItem: rgba(0, 0, 0, 0.1);
+    --tocItemSel: rgba(0, 0, 0, 0.3);
+    --codeBkg: #024;
     --accent: #024;
+    --accentText: #fff;
+}
+
+:root .abyss {
+    --textColor: #fff;
+    --backgroundColor: #06061F;
+    --sectionBorderColor: #2961A0;
+    --tocItem: rgba(255, 255, 255, 0.1);
+    --tocItemSel: rgba(255, 255, 255, 0.3);
+    --codeBkg: #020C17;
+    --accent: #024;
+    --accentText: #fff;
+}
+
+:root .cyberpunk {
+    --textColor: #fff;
+    --backgroundColor: #06061F;
+    --sectionBorderColor: #f72585;
+    --tocItem: rgba(67, 97, 238, 0.4);
+    --tocItemSel: #7209b7;
+    --codeBkg: #020C17;
+    --accent: #7209b7;
     --accentText: #fff;
 }
 
@@ -62,7 +111,6 @@ h1, h2, h3, h4 {
     width: 100vw;
     height: 94vh;
     display: flex;
-    flex-direction: row;
 }
 
 .tableOfContents {
@@ -78,7 +126,6 @@ h1, h2, h3, h4 {
     background-color: var(--backgroundColor);
     border-bottom: solid var(--sectionBorderColor) 0.05vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -95,7 +142,7 @@ h1, h2, h3, h4 {
     overflow-y: auto;
 }
 
-.tocItem {
+.tocItem, .settingsItem {
     flex-basis: fit-content;
     background-color: var(--tocItem);
     border-radius: 0.2em;
@@ -162,7 +209,6 @@ h1, h2, h3, h4 {
     background-color: var(--backgroundColor);
     border-top: solid var(--sectionBorderColor) 0.05vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -340,6 +386,7 @@ pre, code {
     color: var(--accentText);
     border-radius: 10px;
     padding: 0 2vw;
+    overflow: auto;
 }
 
 .settingsPane h1 {
@@ -355,10 +402,34 @@ pre, code {
     cursor: pointer;
 }
 
+.settingsTitleHolder {
+    width: 60vw;
+    text-align:left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.settingsIcon {
+    width: 5vw;
+}
+
+.settingsText {
+    width: 35vw;
+    text-align: left;
+}
+
+.settingsAction {
+    width: 20vw;
+}
+
 .fadeOut {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 0.25s, opacity 0.25s linear;
+    transition: visibility 0.25s, opacity 0.25s linear;
 }
 
 .fadeIn {

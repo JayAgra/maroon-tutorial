@@ -1,3 +1,5 @@
+document.body.className = document.cookie.split("; ").find((row) => row.startsWith("93e8f3ca5c740f21a8c0992="))?.split("=")[1];
+
 pageManifest.forEach((e, i) => {
     let c = document.createElement("div");
     c.className = i === 0 ? "tocItem tocSelectedItem" : "tocItem";

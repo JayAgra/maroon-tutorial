@@ -41,7 +41,79 @@
                 <div class="settingsPane">
                     <img class="closeSettingsModal" src="src/icons/close.svg"/>
                     <h1>Settings</h1>
-                    <h3>i didn't implement this yet :~)</h3>
+                    <!--<h3>i didn't implement this yet :~)</h3>-->
+                    <div class="settingsItem">
+                        <div class="settingsTitleHolder">
+                            <div class="settingsIcon">
+                                <img src="src/icons/theme.svg"/>
+                            </div>
+                            <div class="settingsText">
+                                <span>theme</span>
+                            </div>
+                            <div class="settingsAction">
+                                <select id="themeColor">
+                                    <option value="dark" selected>Dark</option>
+                                    <option value="light">Light</option>
+                                    <option value="night">Night</option>
+                                    <option value="abyss">Abyss</option>
+                                    <option value="jayagra">JayAgra</option>
+                                    <option value="cyberpunk">Cyberpunk</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsItem">
+                        <div class="settingsTitleHolder">
+                            <div class="settingsIcon">
+                                <img src="src/icons/reset.svg"/>
+                            </div>
+                            <div class="settingsText">
+                                <span>reset progress</span>
+                            </div>
+                            <div class="settingsAction">
+                                <button id="resetProgress">reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsItem">
+                        <div class="settingsTitleHolder">
+                            <div class="settingsIcon">
+                                <img src="src/icons/import.svg"/>
+                            </div>
+                            <div class="settingsText">
+                                <span>import data</span>
+                            </div>
+                            <div class="settingsAction">
+                                <input type="file" id="importSaveData" accept=".maroonsave">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsItem">
+                        <div class="settingsTitleHolder">
+                            <div class="settingsIcon">
+                                <img src="src/icons/export.svg"/>
+                            </div>
+                            <div class="settingsText">
+                                <span>export data</span>
+                            </div>
+                            <div class="settingsAction">
+                                <button id="exportSaveData">export</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsItem">
+                        <div class="settingsTitleHolder">
+                            <div class="settingsIcon">
+                                <img src="src/icons/a11y.svg"/>
+                            </div>
+                            <div class="settingsText">
+                                <span>reduce transparency</span>
+                            </div>
+                            <div class="settingsAction">
+                                <input type="checkbox" id="reduceUITransparency">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
