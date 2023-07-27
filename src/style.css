@@ -3,7 +3,6 @@
     src: url('fonts/Raleway-300.ttf') format('truetype');
 }
 
-
 @font-face {
     font-family: 'raleway-400';
     src: url('fonts/Raleway-400.ttf') format('truetype');
@@ -49,6 +48,10 @@ body {
     overflow-x: none;
 }
 
+h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "raleway-400";
+}
+
 .title h2 {
     margin: 0;
     margin-bottom: 0.5vh;
@@ -65,7 +68,6 @@ body {
 .tableOfContents {
     height: 94vh;
     width: 20vw;
-    /*background-color: #2997ff;*/
     display: flex;
     flex-direction: column;
 }
@@ -80,7 +82,7 @@ body {
     justify-content: center;
 }
 
-.tocHeader p {
+.tocHeader * {
     width: 20vw;
     font-size: large;
     text-align: center;
@@ -98,7 +100,6 @@ body {
     background-color: var(--tocItem);
     border-radius: 0.2em;
     margin: 0.35vh 0.5vw 0.35vh 0.5vw;
-    /*padding-left: 1vw;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,7 +113,7 @@ body {
 
 .tocItemTitleHolder {
     width: 18vw;
-    text-align: left;
+    text-align:left;
     word-wrap: break-word;
     overflow-wrap: break-word;
     margin-left: 1vw;
@@ -139,7 +140,7 @@ body {
     margin-right: 0.75em;
 }
 
-.tocIncomplete .tocItemTitleHolder::before{
+.tocIncomplete .tocItemTitleHolder::before {
     display: inline-flex;
     position: relative;
     content: '';
@@ -267,11 +268,6 @@ pre, code {
     color: #fff;
 }
 
-.divOneFveHt {
-    text-align: left;
-    line-height: 1.5;
-}
-
 [data-tooltip] {
     position: relative;
     text-decoration-line: underline;
@@ -366,7 +362,7 @@ pre, code {
 }
 
 .fadeIn {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.25s linear;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.25s linear;
 }
