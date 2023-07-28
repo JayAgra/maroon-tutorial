@@ -25,15 +25,13 @@ function setPageAsRead(pageUID = 0, elementNumber = 0) {
     if (cookieValue === undefined || window.completepages === undefined) {
         window.completepages =
             cookieValue === undefined
-                ? [pageUID]
+                ? [0]
                 : cookieValue.split(",").map((element) => {
                       return Number(element);
                   });
         if (cookieValue === undefined) {
-            document.cookie = `735369a9857a9f670dea0=${pageUID}`;
-            document.getElementsByClassName("tocItem")[
-                elementNumber
-            ].firstChild.className = "tocItemHalign tocComplete";
+            document.cookie = `735369a9857a9f670dea0=0`;
+            document.getElementsByClassName("tocItem")[0].firstChild.className = "tocItemHalign tocComplete";
         }
     } else {
         if (

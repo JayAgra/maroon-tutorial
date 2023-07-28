@@ -8,7 +8,7 @@ pageManifest.forEach((e, i) => {
     c.className = i === 0 ? "tocItem tocSelectedItem" : "tocItem";
     c.setAttribute("pageID", e.id);
     let s = document.createElement("div");
-    s.className = "tocItemHalign";
+    s.className = i === 0 ? "tocItemHalign tocComplete" : "tocItemHalign";
     let t = document.createElement("span");
     t.className = "tocItemTitleHolder";
     t.innerText = e.title;
