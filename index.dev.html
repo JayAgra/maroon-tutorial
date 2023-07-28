@@ -4,8 +4,8 @@
         <title>Maroon Framework Tutorial</title>
         <meta charset="utf8">
         <meta name="theme-color" content="#000">
-        <link rel="stylesheet" href="src/style.css">
-        <link rel="stylesheet" href="src/night-owl.min.css">
+        <link rel="stylesheet" href="src/css/style.css">
+        <link rel="stylesheet" href="src/css/night-owl.min.css">
     </head>
     <body>
         <div class="content">
@@ -58,6 +58,8 @@
                                     <option value="abyss">Abyss</option>
                                     <option value="jayagra">JayAgra</option>
                                     <option value="cyberpunk">Cyberpunk</option>
+                                    <option value="reducedTransparencyDark">Dark (Reduced Transparency)</option>
+                                    <option value="reducedTransparencyLight">Light (Reduced Transparency)</option>
                                 </select>
                             </div>
                         </div>
@@ -104,13 +106,13 @@
                     <div class="settingsItem">
                         <div class="settingsTitleHolder">
                             <div class="settingsIcon">
-                                <img src="src/icons/a11y.svg"/>
+                                <img src="src/icons/offline.svg"/>
                             </div>
                             <div class="settingsText">
-                                <span>reduce transparency</span>
+                                <span>service worker</span>
                             </div>
                             <div class="settingsAction">
-                                <input type="checkbox" id="reduceUITransparency">
+                                <button id="installSw">install</button><br><button id="updateSw">update</button><br><button id="uninstallSw">uninstall</button>
                             </div>
                         </div>
                     </div>

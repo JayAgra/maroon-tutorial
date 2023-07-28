@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'raleway-300';
-    src: url('fonts/Raleway-300.ttf') format('truetype');
+    src: url('../fonts/Raleway-300.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'raleway-400';
-    src: url('fonts/Raleway-400.ttf') format('truetype');
+    src: url('../fonts/Raleway-400.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'raleway-700';
-    src: url('fonts/Raleway-700.ttf') format('truetype');
+    src: url('../fonts/Raleway-700.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'JetBrainsMono-400';
-    src: url('fonts/JetBrainsMono-400.ttf') format('truetype');
+    src: url('../fonts/JetBrainsMono-400.ttf') format('truetype');
 }
 
 /* color themes */
@@ -84,6 +84,28 @@
     --codeBkg: #020C17;
     --accent: #7209b7;
     --accentText: #fff;
+}
+
+:root .reducedTransparencyDark {
+    --textColor: #fff;
+    --backgroundColor: #000;
+    --sectionBorderColor: #444;
+    --tocItem: #000;
+    --tocItemSel: #024;
+    --codeBkg: #011627;
+    --accent: #024;
+    --accentText: #fff;
+}
+
+:root .reducedTransparencyLight {
+    --textColor: #000;
+    --backgroundColor: #fff;
+    --sectionBorderColor: #444;
+    --tocItem: #fff;
+    --tocItemSel: #AED6FF;
+    --codeBkg: #011627;
+    --accent: #bbb;
+    --accentText: #000;
 }
 
 body {
@@ -179,7 +201,7 @@ h1, h2, h3, h4 {
     display: inline-flex;
     position: relative;
     content: '';
-    background-image: url(icons/check_filled.svg);
+    background-image: url(../icons/check_filled.svg);
     background-size: 1em 1em;
     height: 1em;
     width: 1em;
@@ -191,7 +213,7 @@ h1, h2, h3, h4 {
     display: inline-flex;
     position: relative;
     content: '';
-    background-image: url(icons/check_empty.svg);
+    background-image: url(../icons/check_empty.svg);
     background-size: 1em 1em;
     height: 1em;
     width: 1em;

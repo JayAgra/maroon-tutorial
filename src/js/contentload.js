@@ -5,7 +5,8 @@ function loadPage(pnum = 0) {
     xhr.onreadystatechange = async () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             console.log("200 ok");
-            document.getElementById("articleContentElement").innerHTML = xhr.responseText;
+            document.getElementById("articleContentElement").innerHTML =
+                xhr.responseText;
             hljs.highlightAll();
             window.currentPage = pnum;
             setPageAsRead(pageManifest[pnum].id, pnum);

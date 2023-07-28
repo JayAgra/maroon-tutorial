@@ -1,4 +1,7 @@
-document.body.className = document.cookie.split("; ").find((row) => row.startsWith("93e8f3ca5c740f21a8c0992="))?.split("=")[1];
+document.body.className = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("93e8f3ca5c740f21a8c0992="))
+    ?.split("=")[1];
 
 pageManifest.forEach((e, i) => {
     let c = document.createElement("div");
@@ -14,7 +17,7 @@ pageManifest.forEach((e, i) => {
     document.getElementsByClassName("tocContents")[0].appendChild(c);
 });
 
-const tocItems = Array.from(document.getElementsByClassName("tocItem"))
+const tocItems = Array.from(document.getElementsByClassName("tocItem"));
 
 window.currentPage = 0;
 
@@ -35,5 +38,11 @@ tocItems.forEach((tocItem) => {
 });
 
 document.getElementById("progressIndicator").textContent = Math.round(
-    (document.cookie.split("; ").find((row) => row.startsWith("735369a9857a9f670dea0="))?.split("=")[1].split(",").length / pageManifest.length) * 100
+    (document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("735369a9857a9f670dea0="))
+        ?.split("=")[1]
+        .split(",").length /
+        pageManifest.length) *
+        100
 );

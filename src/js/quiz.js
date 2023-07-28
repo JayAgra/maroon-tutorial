@@ -11,25 +11,31 @@
  */
 
 function runQuiz(id, button) {
-    var answer = document.getElementById(id).getAttribute("data-answer")
+    var answer = document.getElementById(id).getAttribute("data-answer");
     var selected = document.querySelector(`input[name="${id}-radio"]:checked`);
     if (selected.value === answer) {
-        document.getElementsByName(`${id}-radio`).forEach(box => box.disabled = true)
-        button.setAttribute("data-attempts", Number(button.getAttribute("data-attempts")) + 1)
+        document.getElementsByName(`${id}-radio`).forEach((box) => (box.disabled = true));
+        button.setAttribute(
+            "data-attempts",
+            Number(button.getAttribute("data-attempts")) + 1
+        );
         button.disabled = true;
         selected.parentElement.style.color = "#0f0";
         if (button.getAttribute("data-attempts") === "1") {
-          button.innerHTML = "correct on first try";
-          button.style.color = "#0f0";
+            button.innerHTML = "correct on first try";
+            button.style.color = "#0f0";
         } else if (button.getAttribute("data-attempts") === "4") {
-          button.innerHTML = "failed";
-          button.style.color = "#f00";
+            button.innerHTML = "failed";
+            button.style.color = "#f00";
         } else {
-          button.innerHTML = "correct in " + button.getAttribute("data-attempts") + " tries";
-          button.style.color = "#ff0";
+            button.innerHTML = "correct in " + button.getAttribute("data-attempts") + " tries";
+            button.style.color = "#ff0";
         }
     } else {
-        button.setAttribute("data-attempts", Number(button.getAttribute("data-attempts")) + 1)
+        button.setAttribute(
+            "data-attempts",
+            Number(button.getAttribute("data-attempts")) + 1
+        );
         selected.parentElement.style.color = "#f00";
         selected.disabled = "true";
     }
