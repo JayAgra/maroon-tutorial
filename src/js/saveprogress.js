@@ -10,18 +10,6 @@ function setPageAsRead(pageUID = 0, elementNumber = 0) {
         .split("; ")
         .find((row) => row.startsWith("735369a9857a9f670dea0="))
         ?.split("=")[1];
-    document.getElementById("progressIndicator").textContent = Math.round(
-        (cookieValue
-            .split(",")
-            .map((element) => {
-                return Number(element);
-            })
-            .filter((element) => {
-                return pages.includes(element);
-            }).length /
-            pages.length) *
-            100
-    );
     if (cookieValue === undefined || window.completepages === undefined) {
         window.completepages =
             cookieValue === undefined
@@ -34,6 +22,19 @@ function setPageAsRead(pageUID = 0, elementNumber = 0) {
             document.getElementsByClassName("tocItem")[0].firstChild.className = "tocItemHalign tocComplete";
         }
     } else {
+        document.getElementById("progressIndicator").textContent =
+            Math.round(
+                (cookieValue
+                    .split(",")
+                    .map((element) => {
+                        return Number(element);
+                    })
+                    .filter((element) => {
+                        return pages.includes(element);
+                    }).length /
+                    pages.length) *
+                    100
+            );
         if (
             !cookieValue
                 .split(",")
