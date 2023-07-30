@@ -2,24 +2,20 @@
     font-family: 'raleway-300';
     src: url('../fonts/Raleway-300.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'raleway-400';
     src: url('../fonts/Raleway-400.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'raleway-700';
     src: url('../fonts/Raleway-700.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'JetBrainsMono-400';
     src: url('../fonts/JetBrainsMono-400.ttf') format('truetype');
 }
 
 /* color themes */
-
 :root {
     --textColor: #fff;
     --backgroundColor: #000;
@@ -29,6 +25,19 @@
     --codeBkg: #011627;
     --accent: #024;
     --accentText: #fff;
+    --headerColor: var(--textColor);
+}
+
+:root .gruvbox {
+    --textColor: #fff;
+    --backgroundColor: #1d2021;
+    --sectionBorderColor: #b8bb26;
+    --tocItem: #504945;
+    --tocItemSel: #b16286;
+    --codeBkg: #3c3836;
+    --accent: #458588;
+    --accentText: #fff;
+    --headerColor: #b8bb26;
 }
 
 :root .light {
@@ -38,14 +47,14 @@
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 34, 68, 0.5);
     --codeBkg: #011627;
-    --accent: #AED6FF;
+    --accent: #aed6ff;
     --accentText: #024;
 }
 
 :root .jayagra {
     --textColor: #fff;
     --backgroundColor: #024;
-    --sectionBorderColor: #000;
+    --sectionBorderColor: #05c;
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 0, 0, 0.3);
     --codeBkg: #000;
@@ -56,7 +65,7 @@
 :root .night {
     --textColor: #fff;
     --backgroundColor: #21023b;
-    --sectionBorderColor: #000;
+    --sectionBorderColor: #555;
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 0, 0, 0.3);
     --codeBkg: #024;
@@ -66,16 +75,17 @@
 
 :root .abyss {
     --textColor: #fff;
-    --backgroundColor: #06061F;
-    --sectionBorderColor: #2961A0;
+    --backgroundColor: #06061f;
+    --sectionBorderColor: #2961a0;
     --tocItem: rgba(255, 255, 255, 0.1);
     --tocItemSel: rgba(255, 255, 255, 0.3);
-    --codeBkg: #020C17;
+    --codeBkg: #020c17;
     --accent: #024;
     --accentText: #fff;
 }
 
-:root .cyberpunk {
+/* to fix (pinkish accent is a little much) */
+/* :root .cyberpunk {
     --textColor: #fff;
     --backgroundColor: #06061F;
     --sectionBorderColor: #f72585;
@@ -84,7 +94,7 @@
     --codeBkg: #020C17;
     --accent: #7209b7;
     --accentText: #fff;
-}
+} */
 
 :root .reducedTransparencyDark {
     --textColor: #fff;
@@ -119,13 +129,16 @@ body {
     overflow-x: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: -apple-system, BlinkMacSystemFont, "raleway-400";
+    color: var(--headerColor);
 }
 
 .title h2 {
-    margin: 0;
-    margin-bottom: 0.5vh;
+    margin: 0 0 0.5vh;
 }
 
 .mainContent {
@@ -153,8 +166,9 @@ h1, h2, h3, h4 {
 
 .tocHeader * {
     width: 20vw;
-    font-size: large;
+    font-size: 2vh;
     text-align: center;
+    color: var(--textColor);
 }
 
 .tocContents {
@@ -164,25 +178,25 @@ h1, h2, h3, h4 {
     overflow-y: auto;
 }
 
-.tocItem, .settingsItem {
+.settingsItem,
+.tocItem {
     flex-basis: fit-content;
     background-color: var(--tocItem);
     border-radius: 0.2em;
-    margin: 0.35vh 0.5vw 0.35vh 0.5vw;
+    margin: 0.35vh 0.5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 5vh;
     padding: 0.75em;
 }
-
 .tocContents:first-child {
     margin-top: 2vh !important;
 }
 
 .tocItemTitleHolder {
     width: 18vw;
-    text-align:left;
+    text-align: left;
     word-wrap: break-word;
     overflow-wrap: break-word;
     margin-left: 1vw;
@@ -201,7 +215,7 @@ h1, h2, h3, h4 {
     display: inline-flex;
     position: relative;
     content: '';
-    background-image: url(../icons/check_filled.svg);
+    background-image: url("../icons/check_filled.svg");
     background-size: 1em 1em;
     height: 1em;
     width: 1em;
@@ -213,7 +227,7 @@ h1, h2, h3, h4 {
     display: inline-flex;
     position: relative;
     content: '';
-    background-image: url(../icons/check_empty.svg);
+    background-image: url("../icons/check_empty.svg");
     background-size: 1em 1em;
     height: 1em;
     width: 1em;
@@ -236,7 +250,7 @@ h1, h2, h3, h4 {
 
 .tocFooter p {
     width: 20vw;
-    font-size: small;
+    font-size: 1.5vh;
     text-align: center;
 }
 
@@ -279,7 +293,8 @@ article h1 {
     width: 49vw;
 }
 
-.settings span, .rightToolbar span {
+.rightToolbar span,
+.settings span {
     position: relative;
     bottom: 0.5vh;
 }
@@ -293,7 +308,8 @@ a {
     color: #2997ff;
 }
 
-pre, code {
+code,
+pre {
     width: 69vw;
     border-radius: 0.5vw;
 }
@@ -317,7 +333,7 @@ pre, code {
 .quizSect > button {
     color: #fff;
     background-color: #000;
-    border: 0px solid var(--backgroundColor);
+    border: 0 solid var(--backgroundColor);
     border-radius: 0.5vw;
     padding: 1vh 2vw;
     font-size: small;
@@ -342,8 +358,8 @@ pre, code {
     text-decoration-style: dotted;
     cursor: help;
 }
-
-[data-tooltip]:before, [data-tooltip]:after {
+[data-tooltip]:after,
+[data-tooltip]:before {
     position: absolute;
     top: 150%;
     left: 50%;
@@ -351,7 +367,6 @@ pre, code {
     opacity: 0;
     pointer-events: none;
 }
-
 [data-tooltip]:before {
     margin-top: 0.5vh;
     margin-left: -5vw;
@@ -363,7 +378,6 @@ pre, code {
     text-align: center;
     content: attr(data-tooltip);
 }
-
 [data-tooltip]:after {
     margin-left: 0.3125vw;
     border-bottom: 5px solid var(--accent);
@@ -371,8 +385,8 @@ pre, code {
     border-left: 5px solid transparent;
     content: "";
 }
-
-[data-tooltip]:hover:before, [data-tooltip]:hover:after {
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before {
     visibility: visible;
     opacity: 1;
 }
@@ -426,7 +440,7 @@ pre, code {
 
 .settingsTitleHolder {
     width: 60vw;
-    text-align:left;
+    text-align: left;
     word-wrap: break-word;
     overflow-wrap: break-word;
     margin-left: 1vw;
@@ -455,7 +469,7 @@ pre, code {
 }
 
 .fadeIn {
-	visibility: visible;
-	opacity: 1;
-	transition: opacity 0.25s linear;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.25s linear;
 }

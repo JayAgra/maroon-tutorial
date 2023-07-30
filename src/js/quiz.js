@@ -10,6 +10,8 @@
  * @param {HTMLElement} button - button html element
  */
 
+// aaaa i need to fix this
+
 function runQuiz(id, button) {
     var answer = document.getElementById(id).getAttribute("data-answer");
     var selected = document.querySelector(`input[name="${id}-radio"]:checked`);
