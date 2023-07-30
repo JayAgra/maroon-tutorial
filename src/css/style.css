@@ -31,9 +31,9 @@
 :root .gruvbox {
     --textColor: #fff;
     --backgroundColor: #1d2021;
-    --sectionBorderColor: #b16286;
+    --sectionBorderColor: #b8bb26;
     --tocItem: #504945;
-    --tocItemSel: #b8bb26;
+    --tocItemSel: #b16286;
     --codeBkg: #3c3836;
     --accent: #458588;
     --accentText: #fff;
@@ -47,14 +47,14 @@
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 34, 68, 0.5);
     --codeBkg: #011627;
-    --accent: #AED6FF;
+    --accent: #aed6ff;
     --accentText: #024;
 }
 
 :root .jayagra {
     --textColor: #fff;
     --backgroundColor: #024;
-    --sectionBorderColor: #000;
+    --sectionBorderColor: #05c;
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 0, 0, 0.3);
     --codeBkg: #000;
@@ -65,7 +65,7 @@
 :root .night {
     --textColor: #fff;
     --backgroundColor: #21023b;
-    --sectionBorderColor: #000;
+    --sectionBorderColor: #555;
     --tocItem: rgba(0, 0, 0, 0.1);
     --tocItemSel: rgba(0, 0, 0, 0.3);
     --codeBkg: #024;
@@ -75,16 +75,17 @@
 
 :root .abyss {
     --textColor: #fff;
-    --backgroundColor: #06061F;
-    --sectionBorderColor: #2961A0;
+    --backgroundColor: #06061f;
+    --sectionBorderColor: #2961a0;
     --tocItem: rgba(255, 255, 255, 0.1);
     --tocItemSel: rgba(255, 255, 255, 0.3);
-    --codeBkg: #020C17;
+    --codeBkg: #020c17;
     --accent: #024;
     --accentText: #fff;
 }
 
-:root .cyberpunk {
+/* to fix (pinkish accent is a little much) */
+/* :root .cyberpunk {
     --textColor: #fff;
     --backgroundColor: #06061F;
     --sectionBorderColor: #f72585;
@@ -93,7 +94,7 @@
     --codeBkg: #020C17;
     --accent: #7209b7;
     --accentText: #fff;
-}
+} */
 
 :root .reducedTransparencyDark {
     --textColor: #fff;
@@ -167,6 +168,7 @@ h4 {
     width: 20vw;
     font-size: 2vh;
     text-align: center;
+    color: var(--textColor);
 }
 
 .tocContents {
