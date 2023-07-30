@@ -1,5 +1,6 @@
-<h1>reddish framework</h1>
-<p>content</p>
+<h1>Intro to Robot Programming on the M-A Robotics Team</h1>
+<h3>Prerequisites:</h3>
+<li><p>Basic familiarity with Java programming concepts (classes, methods, variables, data types, loops and if statements) from taking the Intro to Programming course from the robotics team, taking the M-A Java class, or independent study<p><li>
 <pre>
 <code class="language-java">public class BoilerPlate {
     public static void main (String []args) {
